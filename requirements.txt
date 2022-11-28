@@ -1,0 +1,9 @@
+albumentations
+opencv-python-headless
+matplotlib
+pandas
+segmentation_models_pytorch
+SimpleITK
+nibabel
+segmentation-mask-overlay
+wandb

@@ -1,0 +1,18 @@
+version: "3.9"
+services:
+  main:
+    build: .
+    volumes:
+      - "./npy_dataset:/npy_dataset"
+      - "./raw_data:/raw_data"
+      - "./root:/root"
+      - "./artefacts:/artefacts"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    command: ["sleep", "infinity"]
