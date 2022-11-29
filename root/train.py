@@ -114,8 +114,12 @@ if __name__ == "__main__":
             best_losslist = history["Valid Loss"]
 
         fig, ax = plt.subplots( nrows=1, ncols=1 )
-        ax.plot([0,1,2], [10,20,3])
-        fig.savefig(os.path.join("/artefacts", "dice_plot.png"))
+        ax.plot(best_losslist)
+        ax.title.set_text('Dice loss')
+        ax.title.set_text('Dice loss')
+        ax.set_xlabel("Epochs")
+        ax.set_ylabel("1 - Dice")
+        fig.savefig("/artefacts/dice_plot.png")
         plt.close(fig)
         if cfg.use_wandb:
             run.finish()
